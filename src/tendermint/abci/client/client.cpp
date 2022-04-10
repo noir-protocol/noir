@@ -15,7 +15,6 @@ void ReqRes::set_callback(std::function<void(Response*)> cb) {
     return;
   }
   this->cb = cb;
-  _.unlock();
 }
 
 void ReqRes::invoke_callback() const {

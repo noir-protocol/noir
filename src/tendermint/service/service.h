@@ -63,7 +63,7 @@ public:
     bool stopped_expected = true;
     if (!stopped.compare_exchange_strong(stopped_expected, false)) {
       tm_dlog(logger.get(), "Can't reset {} service, Not stopped", name);
-      return make_unexpected(fmt::format("can't reset running {}", name));
+      return errorf("can't reset running {}", name);
     }
 
     bool started_expected = true;

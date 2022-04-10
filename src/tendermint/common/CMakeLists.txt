@@ -6,3 +6,5 @@ target_link_libraries(tendermint_common
 )
 
 add_library(tendermint::common ALIAS tendermint_common)
+
+add_noir_test(bitarray_test test/bitarray_test.cpp DEPENDS tendermint_common)
